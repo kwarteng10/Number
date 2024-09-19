@@ -50,7 +50,7 @@ st.markdown(
     unsafe_allow_html=True)
 
 # Create or connect to SQLite database using Streamlit connection
-conn = st.connection("users", type="sql", ttl=0)  # Ensure you have the correct parameters for your use case
+conn = sqlite3.connect("users.db")
 cursor = conn.cursor()
 
 # Create table if it doesn't exist
